@@ -1,48 +1,39 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Sparql-client : SPARQL client for Ruby." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Sparql-client</title>
+    <meta charset="UTF-8">
+    <title>Sparql-client by ruby-rdf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Sparql-client</h1>
+      <h2 class="project-tagline">SPARQL client for Ruby.</h2>
+      <a href="https://github.com/ruby-rdf/sparql-client" class="btn">View on GitHub</a>
+      <a href="https://github.com/ruby-rdf/sparql-client/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ruby-rdf/sparql-client/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ruby-rdf/sparql-client">View on GitHub</a>
-
-          <h1 id="project_title">Sparql-client</h1>
-          <h2 id="project_tagline">SPARQL client for Ruby.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ruby-rdf/sparql-client/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ruby-rdf/sparql-client/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="sparql-client-for-rdfrb" class="anchor" href="#sparql-client-for-rdfrb"><span class="octicon octicon-link"></span></a>SPARQL Client for RDF.rb</h1>
+    <section class="main-content">
+      <h1>
+<a id="sparql-client-for-rdfrb" class="anchor" href="#sparql-client-for-rdfrb" aria-hidden="true"><span class="octicon octicon-link"></span></a>SPARQL Client for RDF.rb</h1>
 
 <p>This is a <a href="http://ruby-lang.org/">Ruby</a> implementation of a <a href="http://en.wikipedia.org/wiki/SPARQL">SPARQL</a> client for <a href="http://rubygems.org/gems/rdf">RDF.rb</a>.</p>
 
 <ul>
 <li><a href="http://ruby-rdf.github.com/sparql-client/">http://ruby-rdf.github.com/sparql-client/</a></li>
-</ul><p><a href="http://badge.fury.io/rb/sparql-client"><img src="https://badge.fury.io/rb/sparql-client.png" alt="Gem Version"></a>
-<a href="http://travis-ci.org/ruby-rdf/sparql-client"><img src="https://travis-ci.org/ruby-rdf/sparql-client.png?branch=master" alt="Build Status"></a></p>
+</ul>
+
+<p><a href="http://badge.fury.io/rb/sparql-client"><img src="https://badge.fury.io/rb/sparql-client.png" alt="Gem Version"></a>
+<a href="http://travis-ci.org/ruby-rdf/sparql-client"><img src="https://travis-ci.org/ruby-rdf/sparql-client.png?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/ruby-rdf/sparql-client?branch=master"><img src="https://coveralls.io/repos/ruby-rdf/sparql-client/badge.svg?branch=master&amp;service=github" alt="Coverage Status"></a></p>
 
 <h2>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
 <li>Executes queries against any SPARQL 1.0/1.1-compatible endpoint over HTTP,
@@ -54,13 +45,15 @@ or against an <code>RDF::Queryable</code> instance, using the <code>SPARQL</code
 the preferred default for content-negotiation purposes.</li>
 <li>Supports graph results in any RDF serialization format understood by RDF.rb.</li>
 <li>Returns results using the <a href="http://blog.datagraph.org/2010/03/rdf-for-ruby">RDF.rb object model</a>.</li>
-<li>Supports accessing endpoints as read-only <a href="http://rubydoc.info/github/ruby-rdf/rdf/RDF/Repository"><code>RDF::Repository</code></a>
-instances.</li>
-</ul><h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+<li>Supports accessing endpoints as read/write <a href="http://rubydoc.info/github/ruby-rdf/rdf/RDF/Repository"><code>RDF::Repository</code></a>
+instances {SPARQL::Client::Repository}.</li>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <h3>
-<a name="querying-a-remote-sparql-endpoint" class="anchor" href="#querying-a-remote-sparql-endpoint"><span class="octicon octicon-link"></span></a>Querying a remote SPARQL endpoint</h3>
+<a id="querying-a-remote-sparql-endpoint" class="anchor" href="#querying-a-remote-sparql-endpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying a remote SPARQL endpoint</h3>
 
 <pre><code>require 'sparql/client'
 
@@ -68,7 +61,7 @@ sparql = SPARQL::Client.new("http://dbpedia.org/sparql")
 </code></pre>
 
 <h3>
-<a name="querying-a-rdfrepository-instance" class="anchor" href="#querying-a-rdfrepository-instance"><span class="octicon octicon-link"></span></a>Querying a <code>RDF::Repository</code> instance</h3>
+<a id="querying-a-rdfrepository-instance" class="anchor" href="#querying-a-rdfrepository-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying a <code>RDF::Repository</code> instance</h3>
 
 <pre><code>require 'rdf/trig'
 repository = RDF::Repository.load("http://example/dataset.trig")
@@ -77,7 +70,7 @@ sparql = SPARQL::Client.new(repository)
 </code></pre>
 
 <h3>
-<a name="executing-a-boolean-query-and-outputting-the-result" class="anchor" href="#executing-a-boolean-query-and-outputting-the-result"><span class="octicon octicon-link"></span></a>Executing a boolean query and outputting the result</h3>
+<a id="executing-a-boolean-query-and-outputting-the-result" class="anchor" href="#executing-a-boolean-query-and-outputting-the-result" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing a boolean query and outputting the result</h3>
 
 <pre><code># ASK WHERE { ?s ?p ?o }
 result = sparql.ask.whether([:s, :p, :o]).true?
@@ -86,7 +79,7 @@ puts result.inspect   #=&gt; true or false
 </code></pre>
 
 <h3>
-<a name="executing-a-tuple-query-and-iterating-over-the-returned-solutions" class="anchor" href="#executing-a-tuple-query-and-iterating-over-the-returned-solutions"><span class="octicon octicon-link"></span></a>Executing a tuple query and iterating over the returned solutions</h3>
+<a id="executing-a-tuple-query-and-iterating-over-the-returned-solutions" class="anchor" href="#executing-a-tuple-query-and-iterating-over-the-returned-solutions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing a tuple query and iterating over the returned solutions</h3>
 
 <pre><code># SELECT * WHERE { ?s ?p ?o } OFFSET 100 LIMIT 10
 query = sparql.select.where([:s, :p, :o]).offset(100).limit(10)
@@ -97,7 +90,7 @@ end
 </code></pre>
 
 <h3>
-<a name="executing-a-graph-query-and-iterating-over-the-returned-statements" class="anchor" href="#executing-a-graph-query-and-iterating-over-the-returned-statements"><span class="octicon octicon-link"></span></a>Executing a graph query and iterating over the returned statements</h3>
+<a id="executing-a-graph-query-and-iterating-over-the-returned-statements" class="anchor" href="#executing-a-graph-query-and-iterating-over-the-returned-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing a graph query and iterating over the returned statements</h3>
 
 <pre><code># CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 10
 query = sparql.construct([:s, :p, :o]).where([:s, :p, :o]).limit(10)
@@ -108,15 +101,35 @@ end
 </code></pre>
 
 <h3>
-<a name="executing-an-arbitrary-textual-sparql-query-string" class="anchor" href="#executing-an-arbitrary-textual-sparql-query-string"><span class="octicon octicon-link"></span></a>Executing an arbitrary textual SPARQL query string</h3>
+<a id="executing-an-arbitrary-textual-sparql-query-string" class="anchor" href="#executing-an-arbitrary-textual-sparql-query-string" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing an arbitrary textual SPARQL query string</h3>
 
 <pre><code>result = sparql.query("ASK WHERE { ?s ?p ?o }")
 
 puts result.inspect   #=&gt; true or false
 </code></pre>
 
+<h3>
+<a id="inserting-data-into-a-graph" class="anchor" href="#inserting-data-into-a-graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inserting data into a graph</h3>
+
+<pre><code># INSERT DATA { &lt;http://example.org/jhacker&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J. Random Hacker" .}
+data = RDF::Graph.new do |graph|
+  graph &lt;&lt; [RDF::URI('http://example.org/jhacker'), RDF::FOAF.name, "J. Random Hacker"]
+end
+insert_data(data)
+</code></pre>
+
+<h3>
+<a id="deleting-data-from-a-graph" class="anchor" href="#deleting-data-from-a-graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting data from a graph</h3>
+
+<pre><code># DELETE DATA { &lt;http://example.org/jhacker&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J. Random Hacker" .}
+data = RDF::Graph.new do |graph|
+  graph &lt;&lt; [RDF::URI('http://example.org/jhacker'), RDF::FOAF.name, "J. Random Hacker"]
+end
+delete_data(data)
+</code></pre>
+
 <h2>
-<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
 
 <ul>
 <li>{SPARQL::Client}
@@ -124,10 +137,13 @@ puts result.inspect   #=&gt; true or false
 <ul>
 <li>{SPARQL::Client::Query}</li>
 <li>{SPARQL::Client::Repository}</li>
+<li>{SPARQL::Client::Update}</li>
 </ul>
 </li>
-</ul><h2>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+</ul>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
 
 <ul>
 <li>
@@ -137,8 +153,11 @@ puts result.inspect   #=&gt; true or false
 <li>
 <a href="http://rubygems.org/gems/net-http-persistent">Net::HTTP::Persistent</a> (&gt;= 1.4)</li>
 <li>Soft dependency on <a href="http://rubygems.org/gems/sparql">SPARQL</a> (&gt;= 1.1)</li>
-</ul><h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<li>Soft dependency on <a href="http://rubygems.org/gems/nokogiri">Nokogiri</a> (&gt;= 1.5)</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>The recommended installation method is via <a href="http://rubygems.org/">RubyGems</a>.
 To install the latest official release of the <code>SPARQL::Client</code> gem, do:</p>
@@ -147,7 +166,7 @@ To install the latest official release of the <code>SPARQL::Client</code> gem, d
 </code></pre>
 
 <h2>
-<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
 
 <p>To get a local working copy of the development repository, do:</p>
 
@@ -161,12 +180,14 @@ follows:</p>
 </code></pre>
 
 <h2>
-<a name="mailing-list" class="anchor" href="#mailing-list"><span class="octicon octicon-link"></span></a>Mailing List</h2>
+<a id="mailing-list" class="anchor" href="#mailing-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mailing List</h2>
 
 <ul>
 <li><a href="http://lists.w3.org/Archives/Public/public-rdf-ruby/">http://lists.w3.org/Archives/Public/public-rdf-ruby/</a></li>
-</ul><h2>
-<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h2>
+</ul>
+
+<h2>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h2>
 
 <ul>
 <li>
@@ -178,12 +199,14 @@ follows:</p>
 <li>
 <a href="http://github.com/gkellogg">Gregg Kellogg</a> - <a href="http://greggkellogg.net/">http://greggkellogg.net/</a>
 </li>
-</ul><h2>
-<a name="contributors" class="anchor" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h2>
+</ul>
+
+<h2>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributors</h2>
 
 <ul>
 <li>
-<a href="http://github.com/b4d">Christoph Badura</a> - <a href="http://github.com/b4d">http://github.com/b4d</a>
+<a href="http://github.com/bad">Christoph Badura</a> - <a href="http://github.com/bad">http://github.com/bad</a>
 </li>
 <li>
 <a href="http://github.com/jamespjh">James Hetherington</a> - <a href="http://twitter.com/jamespjh">http://twitter.com/jamespjh</a>
@@ -212,8 +235,13 @@ follows:</p>
 <li>
 <a href="http://github.com/thoferon">Thomas Feron</a> - <a href="http://github.com/thoferon">http://github.com/thoferon</a>
 </li>
-</ul><h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<li>
+<a href="http://github.com/ngottlieb">Nick Gottlieb</a> - <a href="http://www.nicholasgottlieb.com">http://www.nicholasgottlieb.com</a>
+</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>This repository uses <a href="https://github.com/nvie/gitflow">Git Flow</a> to mange development and release activity. All submissions <em>must</em> be on a feature branch based on the <em>develop</em> branch to ease staging and integration.</p>
 
@@ -229,8 +257,10 @@ list in the the <code>README</code>. Alphabetical order applies.</li>
 <li>Do note that in order for us to merge any non-trivial changes (as a rule
 of thumb, additions larger than about 15 lines of code), we need an
 explicit <a href="http://unlicense.org/#unlicensing-contributions">public domain dedication</a> on record from you.</li>
-</ul><h2>
-<a name="resources" class="anchor" href="#resources"><span class="octicon octicon-link"></span></a>Resources</h2>
+</ul>
+
+<h2>
+<a id="resources" class="anchor" href="#resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources</h2>
 
 <ul>
 <li><a href="http://ruby-rdf.github.com/sparql-client/">http://ruby-rdf.github.com/sparql-client/</a></li>
@@ -239,23 +269,22 @@ explicit <a href="http://unlicense.org/#unlicensing-contributions">public domain
 <li><a href="http://rubyforge.org/projects/sparql/">http://rubyforge.org/projects/sparql/</a></li>
 <li><a href="http://raa.ruby-lang.org/project/sparql-client/">http://raa.ruby-lang.org/project/sparql-client/</a></li>
 <li><a href="http://www.ohloh.net/p/rdf">http://www.ohloh.net/p/rdf</a></li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>This is free and unencumbered public domain software. For more information,
 see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying {file:UNLICENSE} file.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Sparql-client maintained by <a href="https://github.com/ruby-rdf">ruby-rdf</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ruby-rdf/sparql-client">Sparql-client</a> is maintained by <a href="https://github.com/ruby-rdf">ruby-rdf</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
